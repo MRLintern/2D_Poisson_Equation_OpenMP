@@ -52,3 +52,9 @@ The potential and source for the example application:
 	Note: pow(x,2) means x^2 (x squared); pow() comes from the math library.
 
     Note: in the code, u = potential and f = source 
+    
+
+## Do I have OpenMP?
+You should do if you have an up to date compiler. e.g. `gcc`.
+You don't install OpenMP. OpenMP is a feature of the compiler. Check that the compiler you are using implements OpenMP, which is an API for parallel programming in `C/C++/Fortran`. 
+The `gcc` compiler version used for this program is: `9.4.0`.
