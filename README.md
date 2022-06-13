@@ -62,7 +62,7 @@ The `gcc` compiler version used for this program is: `9.4.0`.
 ## Instructions
 1. Clone the repo: `https://github.com/MRLintern/2D_Poisson_Equation_OpenMP.git`
 2. `$ make`
-3. `$./main`
+3. `$./poisson_main`
 
 ## Further Developments
 This isn't the best software in terms of its development/structure. For example, separating function prototypes and definitions into separate (header) files would be a good place to start. Please feel free to make alterations to the software to improve it.
