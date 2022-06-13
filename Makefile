@@ -2,10 +2,10 @@ CC = gcc
 CFLAGS = -g -O2 -Wall -Wextra -fopenmp
 
 
-all: main
+all: poisson_main
 	
 main: main.c
-	$(CC) $(CFLAGS) -o main main.c -lm
+	$(CC) $(CFLAGS) -o poisson_main poisson_main.c -lm
 	
 clean:
-	main
+	poisson_main
