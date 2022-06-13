@@ -25,7 +25,9 @@ This system of algebraic equations can be represented as a matrix equation:
 
 	Au = f
 
-div(grad) represents the Laplace operator; this is A in the matrix equation.
+	div(grad),
+	
+represents the Laplace operator; this is A in the matrix equation.
 u is the potential field, something we try find; in the case of an inverse problem.
 f represents the source term; the data we already have.
 
