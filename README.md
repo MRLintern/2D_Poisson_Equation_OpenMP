@@ -64,3 +64,5 @@ The `gcc` compiler version used for this program is: `9.4.0`.
 2. `$ make`
 3. `$./main`
 
+## Further Developments
+This isn't the best software in terms of its developments/structure. For example, separating function prototypes and definitions into separate (header) files would be a good place to start. Please feel free to make alterations to the software to improve it.
