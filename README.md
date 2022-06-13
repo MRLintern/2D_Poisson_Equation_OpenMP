@@ -25,6 +25,8 @@ This system of algebraic equations can be represented as a matrix equation:
 
 	Au = f
 
+and,
+
 	div(grad),
 	
 represents the Laplace operator; this is A in the matrix equation.
