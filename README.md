@@ -8,7 +8,7 @@
 ## Introduction
 2D Poisson's Equation. Discretized using the Finite Difference Method &amp; Solved by Parallelising the Jacobi Iterative Method via the OpenMP API.
 
-This is an example of how we can employ the OpenMP API to solve the Poisson equation.
+This is an example of how we can employ the OpenMP API to solve Poisson's Equation.
 
 It will help if you have an understanding of numerical partial differential equations (NPDE)
 and numerical linear algebra (NLA).
