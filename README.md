@@ -14,7 +14,7 @@ It will help if you have an understanding of numerical partial differential equa
 and numerical linear algebra (NLA).
 There are many online resources for OpenMP, NPDE & NLA; YouTube is a good place to go.
 
-The Poisson equation: 
+Poisson's Equation: 
 
 	-div(grad(u)) = f, 
 
