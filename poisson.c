@@ -60,7 +60,7 @@ We're not trying to solve an inverse problem, but look at how OpenMP speeds up c
 
 //function prototypes
 
-////root-mean-square function; used for error analysis. a represents elemets of the Matrix, A
+//root-mean-square function; used for error analysis. a represents elemets of the Matrix, A
 double rms_function(int nx, int ny, double a[NX][NY]);
 //source function represents the rhs of the equation; the source term. f represents elements of the source matrix
 void source_function(int nx, int ny, double f[NX][NY]);
@@ -272,7 +272,7 @@ int main ()
 //NX & NY are the number of rows and columns in the matrix A; note: a[NX][NY] are the matrix A elements
 //rms will return the root-mean-square value of matrix A
 
-double rms(int nx, int ny, double a[NX][NY])
+double rms_function(int nx, int ny, double a[NX][NY])
 {
   //counters
   int i, j;
@@ -292,15 +292,11 @@ double rms(int nx, int ny, double a[NX][NY])
 
   return v;
 }
-//source function; RHS of Poissons Equation.
-//initialized the RHS of the matrix equation.
-//f[NX][NY] are the elements of the source matrix.
-void rhs ( int nx, int ny, double f[NX][NY] )
 
 //source function; RHS of Poissons Equation.
 //initialized the RHS of the matrix equation.
 //f[NX][NY] are the elements of the source matrix.
-void source(int nx, int ny, double f[NX][NY] )
+void source_function(int nx, int ny, double f[NX][NY] )
 /*
    Recall: Au = f
    
@@ -437,7 +433,7 @@ double potential_exact_function(double x, double y)
   
   double value;
 
-  value = sin (PI*x*y);
+  value = sin(PI*x*y);
 
   return value;
 }
@@ -448,7 +444,7 @@ double laplacian_potential(double x, double y)
   
   double value;
 
-  value = - r8_pi * r8_pi * ( x * x + y * y ) * sin ( r8_pi * x * y );
+  value = -pow(PI,2)*(pow(x,2) + pow(y,2))*sin(PI*x*y);
 
   return value;
 }
