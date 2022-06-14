@@ -1,5 +1,10 @@
 ## 2D Poisson's Equation (OpenMP Version)
 
+## Requirements
+1. `gcc (9.4.0)` compiler which supports `OpenMP`.
+2. `Ubuntu 20.04`.
+3. `make`.
+
 ## Introduction
 2D Poisson's Equation. Discretized using the Finite Difference Method &amp; Solved by Parallelising the Jacobi Iterative Method via the OpenMP API.
 
