@@ -359,8 +359,8 @@ void jacobi(int nx, int ny, double dx, double dy, double f[NX][NY], int input_it
 
     
    double potential_array[NX][NY] is the solution estimate on iteration iteration_output - 1
-   double potential_new_array[NX][NY] is the solution estimate on iteration iteration_input
-   for the output, potential_new_array[NX][NY] is the solution estimate on iteration iteration_output
+   double potential_new_array[NX][NY] is the solution estimate on iteration input_iteration
+   for the output, potential_new_array[NX][NY] is the solution estimate on iteration output_iteration
    
 */
 {
