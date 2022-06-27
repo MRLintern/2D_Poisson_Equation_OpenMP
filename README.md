@@ -38,7 +38,7 @@ represents the Laplace operator; this is A in the matrix equation.
 u is the potential field, something we try find in the case of an inverse problem.
 f represents the source term, the data we already have.
 
-Example scenario: geophysics):
+Example scenario: geophysics:
 
 Note: this isn't represented in this program.
 
