@@ -62,7 +62,7 @@ The potential and source for the example application:
 ## Do I have OpenMP?
 You should do if you have an up to date compiler. e.g. `gcc`.
 You don't install OpenMP. OpenMP is a feature of the compiler. Check that the compiler you are using implements OpenMP, which is an API for parallel programming in `C/C++/Fortran`. 
-The `gcc` compiler version used for this program is: `9.4.0`.
+The `gcc` compiler version used for this application is: `9.4.0`.
 
 ## Instructions
 1. Clone the repo: `https://github.com/MRLintern/2D_Poisson_Equation_OpenMP.git`
