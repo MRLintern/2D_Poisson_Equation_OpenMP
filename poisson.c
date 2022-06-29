@@ -119,28 +119,28 @@ int main ()
   dy = 1.0 / ( double ) ( ny - 1 );
   
   timestamp();
-  printf ("\n");
+  printf("\n");
   printf("Program Uses the OpenMP API to parallelize the Jacobi Iterative Solver to Increase Computation Time to Solve the 2D Poisson's Equation.\n");
-  printf ("\n");
+  printf("\n");
   //tell users how many processors are being used.
-  printf ("The number of processors is %d\n", omp_get_num_procs ( ) );
+  printf ("The number of processors is %d\n", omp_get_num_procs());
 # pragma omp parallel
 {
   //how many threads are being used
-  id = omp_get_thread_num ( );
+  id = omp_get_thread_num();
   if (id == 0)
   {
-    printf ("The maximum number of threads is %d\n", omp_get_num_threads()); 
+    printf("The maximum number of threads is %d\n", omp_get_num_threads()); 
   }
 } 
   //provide user with some basic info r.e. geometry
-  printf ("\n");
-  printf ("Dimensions of square: 0 <= x <= 1, 0 <= y <= 1.\n");
-  printf ("\n");
-  printf ("The number of interior x grid points is %d\n", nx);
-  printf ("The number of interior y grid points is %d\n", ny);
-  printf ("The x grid spacing is %f\n", dx);
-  printf ("The y grid spacing is %f\n", dy);
+  printf("\n");
+  printf("Dimensions of square: 0 <= x <= 1, 0 <= y <= 1.\n");
+  printf("\n");
+  printf("The number of interior x grid points is %d\n", nx);
+  printf("The number of interior y grid points is %d\n", ny);
+  printf("The x grid spacing is %f\n", dx);
+  printf("The y grid spacing is %f\n", dy);
 
   //source function for Poissons Equation
   //f represents elements of the source matrix
@@ -165,25 +165,25 @@ int main ()
 /*
   //Set up the exact solution potential_exact_array
 */
-  for ( j = 0; j < ny; j++ )
+  for (j = 0; j < ny; j++)
   {
-    y = ( double ) ( j ) / ( double ) ( ny - 1 );
+    y = (double) (j) / (double) (ny - 1);
     for ( i = 0; i < nx; i++ )
     {
-      x = ( double ) ( i ) / ( double ) ( nx - 1 );
-      potential_exact_array[i][j] = potential_exact_function( x, y );
+      x = (double) (i) / (double) (nx - 1);
+      potential_exact_array[i][j] = potential_exact_function(x, y);
     }
   }
   potential_norm = rms_function(nx, ny, potential_exact_array);
-  printf ( "RMS of exact solution = %g\n", potential_norm );
+  printf("RMS of exact solution = %g\n", potential_norm);
 
   //Do the iteration.
 
   converged = 0;
 
-  printf ( "\n" );
-  printf ( "  Step    ||potential_new_array||     ||potential_new_array - potential_array||     ||potential_new_array - Exact||\n" );
-  printf ( "\n" );
+  printf("\n");
+  printf("  Step    ||potential_new_array||     ||potential_new_array - potential_array||     ||potential_new_array - Exact||\n");
+  printf("\n");
 
   for (j = 0; j < ny; j++)
   {
@@ -194,10 +194,10 @@ int main ()
   }
   error = rms_function(nx, ny, potential_diff_array);
   
-  printf ( "  %4d  %14g                  %14g\n", 0, potential_newnorm, error);
+  printf("  %4d  %14g                  %14g\n", 0, potential_newnorm, error);
   
   //get wall time
-  wtime = omp_get_wtime ( );
+  wtime = omp_get_wtime();
 
   output_iteration = 0;
 
@@ -234,10 +234,10 @@ int main ()
     }
     error = rms_function(nx, ny, potential_diff_array);
 
-    printf ( "  %4d  %14g  %14g  %14g\n", output_iteration, potential_new_norm, diff, error);
+    printf("  %4d  %14g  %14g  %14g\n", output_iteration, potential_new_norm, diff, error);
 
     //if values greater than tolerance, solutions not converged and blow-up
-    if ( diff <= tolerance )
+    if (diff <= tolerance)
     {
       converged = 1;
       break;
@@ -245,23 +245,23 @@ int main ()
 
   }
 
-  if ( converged )
+  if (converged)
   {
-    printf ( "  The iteration has converged.\n" );
+    printf("The iteration has converged.\n");
   }
   else
   {
-    printf ( "  The iteration has NOT converged.\n" );
+    printf("The iteration has NOT converged.\n");
   }
 
   //time taken
-  wtime = omp_get_wtime ( ) - wtime;
-  printf ( "\n" );
-  printf ( "  Elapsed seconds = %g\n", wtime );
+  wtime = omp_get_wtime() - wtime;
+  printf("\n");
+  printf("Elapsed seconds = %g\n", wtime);
 
-  printf ( "\n" );
-  printf ( "  Normal end of execution.\n" );
-  printf ( "\n" );
+  printf("\n");
+  printf("Normal end of execution.\n");
+  printf("\n");
   timestamp();
 
   return 0;
@@ -296,7 +296,7 @@ double rms_function(int nx, int ny, double a[NX][NY])
 //source function; RHS of Poissons Equation.
 //initialized the RHS of the matrix equation.
 //f[NX][NY] are the elements of the source matrix.
-void source_function(int nx, int ny, double f[NX][NY] )
+void source_function(int nx, int ny, double f[NX][NY])
 /*
    Recall: Au = f
    
@@ -320,10 +320,10 @@ void source_function(int nx, int ny, double f[NX][NY] )
   
   for (j = 0; j < ny; j++)
   {
-    y = ( double ) ( j ) / ( double ) ( ny - 1 );
+    y = (double) (j) / (double) (ny - 1);
     for ( i = 0; i < nx; i++ )
     {
-      x = ( double ) ( i ) / ( double ) ( nx - 1 );
+      x = (double) (i) / (double) (nx - 1);
       if ( i == 0 || i == nx - 1 || j == 0 || j == ny - 1 )
       {
         f[i][j] = potential_exact_function(x, y);
@@ -337,7 +337,7 @@ void source_function(int nx, int ny, double f[NX][NY] )
 
   fnorm = rms_function(nx, ny, f);
 
-  printf ( "  RMS of f = %g\n", fnorm );
+  printf("  RMS of f = %g\n", fnorm);
 
   return;
 }
@@ -384,8 +384,7 @@ void jacobi(int nx, int ny, double dx, double dy, double f[NX][NY], int input_it
       }
     }
 
-  //Compute a new estimate.
-
+//Compute a new estimate.
 # pragma omp for
     for (j = 0; j < ny; j++)
     {
@@ -407,7 +406,7 @@ void jacobi(int nx, int ny, double dx, double dy, double f[NX][NY], int input_it
 }
 
 //function prints the current YMDHMS date as a time stamp
-void timestamp ( )
+void timestamp()
 {
 # define TIME_SIZE 40
 
@@ -420,7 +419,7 @@ void timestamp ( )
 
   strftime(time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm);
 
-  printf ("%s\n", time_buffer);
+  printf("%s\n", time_buffer);
 
   return;
   
