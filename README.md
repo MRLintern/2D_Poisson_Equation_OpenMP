@@ -65,7 +65,7 @@ You don't install OpenMP. OpenMP is a feature of the compiler. Check that the co
 The `gcc` compiler version used for this application is: `9.4.0`.
 
 ## Instructions
-1. Clone the repo: `https://github.com/MRLintern/2D_Poisson_Equation_OpenMP.git`
+1. Clone the repo: `$ git clone https://github.com/MRLintern/2D_Poisson_Equation_OpenMP.git`
 2. `$ make`
 3. `$./poisson_main`
 
