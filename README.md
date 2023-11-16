@@ -34,18 +34,18 @@ and,
 
 	div(grad),
 	
-represents the Laplace operator; this is A in the matrix equation.
-u is the potential field, something we try find in the case of an inverse problem.
-f represents the source term, the data we already have.
+represents the Laplace operator; this is `A` in the matrix equation.
+`u` is the potential field, something we try find in the case of an inverse problem.
+`f` represents the source term, the data we already have.
 
 Example scenario: geophysics:
 
 Note: this isn't represented in this program.
 
-f = gravitational field. 
-u = mass density distribution which produces the gravitational field, the thing we want to find.
+`f` = gravitational field. 
+`u`= mass density distribution which produces the gravitational field, the thing we want to find.
 
-In the case that follows, we actually know both u and f.
+In the case that follows, we actually know both `u` and `f`.
 We're not trying to solve an inverse problem, but look at how OpenMP speeds up computation.
 
 The potential and source for the example application:
