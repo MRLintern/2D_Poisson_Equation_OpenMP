@@ -1,5 +1,6 @@
-## 2D Poisson's Equation (OpenMP Version)
-
+## 2D Poisson's Equation
+* TODO: A new README is required to reflect the updated version of this software.
+* This README reflects the old software.
 ## Requirements
 1. `gcc (9.4.0)` compiler which supports `OpenMP`.
 2. `Ubuntu 20.04`.
