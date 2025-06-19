@@ -35,7 +35,7 @@
 ### Getting and Using the Software
 * `$ git clone git@github.com:MRLintern/2D_Poisson_Equation_OpenMP.git`
 * `$ cd 2D_Poisson_Equation_OpenMP`
-* If you want to generate the results and produce the results yourself:
+* If you want to generate the results and produce the plot yourself:
 * `$ make clean`
 * __Unit Testing__:
 * `$ make test`
