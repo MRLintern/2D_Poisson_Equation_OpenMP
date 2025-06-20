@@ -43,6 +43,6 @@
 * `$ make`
 * `$ ./main`
 * __Plot the Results__:
-* You don't need to be in the `results` directory create the plot; just stay inside `2D_Poisson_Equation_OpenMP`. Note: the plot, `solution_and_error_surface.png`, will be saved inside `results`.
+* You don't need to be in the `results` directory to create the plot; just stay inside `2D_Poisson_Equation_OpenMP`. Note: the plot, `solution_and_error_surface.png`, will be saved inside `results`.
 * `$ python3 plot_results.py`
 * An image will be created and saved in the `results` directory.
